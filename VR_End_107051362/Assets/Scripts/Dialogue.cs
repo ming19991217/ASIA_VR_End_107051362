@@ -10,14 +10,14 @@ public class Dialogue : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.transform.root.name == "Player")
         {
             dialoguePanel.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.transform.root.name == "Player")
         {
             dialoguePanel.SetActive(false);
         }

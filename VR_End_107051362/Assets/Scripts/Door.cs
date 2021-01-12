@@ -10,16 +10,16 @@ public class Door : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.transform.root.name == "Player")
         {
             anim.SetTrigger("in");
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.transform.root.name == "Player")
         {
             anim.SetTrigger("in");
         }
